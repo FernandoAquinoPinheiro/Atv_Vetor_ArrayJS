@@ -22,14 +22,14 @@ let ped1 = Number(prompt("Bem-vindo a hamburgueria do seu Zé\nQual lanche você
 let ped2 = Number(prompt("Qual complemento você irá escolher?\n(1) = Nuggets R$2,00\n(2) = Batata Frita R$3,00\nDigite o número do complemento que você quer pedir: "));
 let ped3 = Number(prompt("Qual a bebida você irá escolher?\n(1) = Coca-cola R$4,50\n(2) = Fanta R$4,50\n(3) = Água R$2,00\nDigite o número da bebida que você quer pedir: "));
 
-// Verifique se as escolhas do usuário estão dentro do intervalo válido
+
 if (ped1 < 1 || ped1 > hamb.length || ped2 < 1 || ped2 > complement.length || ped3 < 1 || ped3 > bebidas.length) {
     alert("Escolha inválida. Por favor, escolha um número válido para cada item.");
 } else {
-    // Calcule o total do pedido com base nas escolhas do usuário
+   
     const totalPedido = valorHamburguer[ped1 - 1] + valorComplemento[ped2 - 1] + valorBebida[ped3 - 1];
     
-    // Mostre as escolhas do usuário e o total do pedido
+   
     const escolhaHamburguer = hamb[ped1 - 1];
     const escolhaComplemento = complement[ped2 - 1];
     const escolhaBebida = bebidas[ped3 - 1];
