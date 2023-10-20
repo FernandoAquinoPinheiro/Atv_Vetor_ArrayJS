@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cardápio</title>
+</head>
+<body>
+    <h1>Lanchonete do seu Zé</h1>
+    <div id="Cardapio"></div>
+    
+
+<script>
+const hamb = ["X1", "X2", "X3"];
+const valorHamburguer = [3.00, 4.00, 5.00];
+const complement = ["Nugget", "Batata Frita"];
+const valorComplemento = [2.00, 3.00];
+const bebidas = ["Coca-cola", "Fanta", "Água"];
+const valorBebida = [4.50, 4.50, 2.00];
+
+let ped1 = Number(prompt("Bem-vindo a hamburgueria do seu Zé\nQual lanche você irá escolher?\n(1) = X1 R$3,00\n(2) = X2 R$4,00\n(3) = X3 R$5,00\nDigite o número do lanche que você quer pedir: "));
+let ped2 = Number(prompt("Qual complemento você irá escolher?\n(1) = Nuggets R$2,00\n(2) = Batata Frita R$3,00\nDigite o número do complemento que você quer pedir: "));
+let ped3 = Number(prompt("Qual a bebida você irá escolher?\n(1) = Coca-cola R$4,50\n(2) = Fanta R$4,50\n(3) = Água R$2,00\nDigite o número da bebida que você quer pedir: "));
+
+// Verifique se as escolhas do usuário estão dentro do intervalo válido
+if (ped1 < 1 || ped1 > hamb.length || ped2 < 1 || ped2 > complement.length || ped3 < 1 || ped3 > bebidas.length) {
+    alert("Escolha inválida. Por favor, escolha um número válido para cada item.");
+} else {
+    // Calcule o total do pedido com base nas escolhas do usuário
+    const totalPedido = valorHamburguer[ped1 - 1] + valorComplemento[ped2 - 1] + valorBebida[ped3 - 1];
+    
+    // Mostre as escolhas do usuário e o total do pedido
+    const escolhaHamburguer = hamb[ped1 - 1];
+    const escolhaComplemento = complement[ped2 - 1];
+    const escolhaBebida = bebidas[ped3 - 1];
+
+    alert("Você escolheu o seguinte pedido:\n\nLanche: " + escolhaHamburguer + "\nComplemento: " + escolhaComplemento + "\nBebida: " + escolhaBebida + "\n\nTotal do pedido: R$" + totalPedido.toFixed(2));
+    document.getElementById("Cardapio").innerHTML ="Você escolheu o seguinte pedido:<br>Lanche: " + escolhaHamburguer + "<br>Complemento: " + escolhaComplemento + "<br>Bebida: " + escolhaBebida + "<br>Total do pedido: R$" + totalPedido.toFixed(2);
+}
+
+
+
+</script>
+
+</body>
+</html>
